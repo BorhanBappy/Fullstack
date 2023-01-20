@@ -127,25 +127,30 @@
 // else{
 //     console.log("is not adults")
 // }
-// //  Arrays
+//  Arrays dicleartion 
 // var name=["Borhan",
 //                 "Shoab",
 //                 "Sharukh",
 //                 "Shanto"
 // ];
+// // Print the Arrays
 // console.log(name)
+// // Print the Arrays index wise
 // console.log(name[0])
 // console.log("index 0-"+name[0])
 // console.log("index 1-"+name[1])
 // console.log("index 2-"+name[2])
 // console.log("index 3-"+name[3])
 // console.log("index 4-"+name[4])
+// //  New Value add in Array.
 // name.append=("Bappy")
+
 // console.log(name)
 // name.delete=("Bappy")
 // console.log(name)
 // console.log(name)
-// var years=[5,6]
+// //  
+// var years=[5,5]
 // console.log(years[0] !== years[1]);
 // years[5] = "mango";
 // console.log(years)
@@ -166,7 +171,6 @@
 
 // console.log(numbers);
 // // results in [[1], 2, [3]]
-
 // // modify the first element of num1
 // num1[0].push(4);
 // console.log(num2[2])
@@ -175,21 +179,128 @@
 // console.log(numbers);
 // // results in [[1, 4], 2, [3]]
 
-const months = ['Jan', 'March', 'April', 'June'];
-months.splice(1, 0,'Feb');
-// Inserts at index 1
-console.log(months);
-// expected output: Array ["Jan", "Feb", "March", "April", "June"]
+// const months = ['Jan', 'March', 'April', 'June'];
+// months.splice(1, 0,'Feb');
+// // Inserts at index 1
+// console.log(months);
+// // expected output: Array ["Jan", "Feb", "March", "April", "June"]
 
-months.splice(4, 1, 'May');
-// Replaces 1 element at index 4
-console.log(months);
-// expected output: Array ["Jan", "Feb", "March", "April", "May"]
-months.splice(4, 1);
-// Delete 1 element at index 4
-console.log(months);
-// expected output: Array ["Jan", "Feb", "March", "April"]
-months.splice(4,0,'May')
-// Inserts at index 4
-console.log(months);
-// expected output: Array ["Jan", "Feb", "March", "April", "May"]
+// months.splice(4, 1, 'May');
+// // Replaces 1 element at index 4
+// console.log(months);
+// // expected output: Array ["Jan", "Feb", "March", "April", "May"]
+// months.splice(4, 1);
+// // Delete 1 element at index 4
+// console.log(months);
+// // expected output: Array ["Jan", "Feb", "March", "April"]
+// months.splice(4,0,'May')
+// // Inserts at index 4
+// console.log(months);
+// // expected output: Array ["Jan", "Feb", "March", "April", "May"]
+
+//  Function 
+// function addumbers(number1,number2){
+// var addition =number1+number2;
+// console.log(addition);
+// }
+// addumbers(4,8);
+// addumbers(8,9);
+//  Function call with return value
+// function addtwonumbers(number1,number2){
+// var addition =number1+number2;
+// return addition
+// }
+// var res1=addtwonumbers(4,8);
+// var res2=addtwonumbers(8,9);
+// console.log(res1,res2)
+// // Built in function
+// var person={
+//     name:'Shoab',
+//     age:23
+// }
+// console.log(Object.values(person))
+// console.log(Object.keys(person))
+// console.log("shoab".toLowerCase())
+// console.log("shoab".toUpperCase())
+// //  Here b find index 4
+// console.log("shoab".indexOf("b"))
+// console.log("shoab".indexOf("a"))
+//  Loops 
+// var names=[
+//     'Shoab',
+//     'Borhan',
+//     'Sharukh',
+//     'Ariful'
+// ]
+// console.log("fori")
+// for(var i=0;i<names.length;i++){
+//     console.log(names[i])
+// }
+
+// console.log("")
+// console.log("for of")
+// // for (const iterator of object) {
+   
+// // }
+// for (const name of names) {
+//     console.log(name)
+// }
+// console.log("")
+// console.log("forEach")
+// // array.forEach(element => {
+  
+// // });
+
+// names.forEach(function(name) {
+//     console.log(name)
+// });
+// console.log("")
+// console.log("For loop ")
+// for (let index = 0; index < names.length; index++) {
+//     const element = names[index];
+//     console.log(element)
+// }
+
+// // while(true){
+// //     console.log("hello")
+// // }
+// var number =0;
+// while (number<5){
+//     console.log(number);
+//     number=number+1
+// }
+// var condition=true
+// while(condition){
+//     console.log('Hello')
+//     condition=false
+// }
+// var index=0
+// while(index<names.length){// condition
+//     console.log(names[index])
+//     index=index+1
+// }
+
+// do{
+//     console.log("hello")
+// }while(false)
+
+// for(var a=0;a<=10;a++){
+//     console.log(a);
+//     if(a==5){
+//         break;
+//     }
+// }
+// for(var a=0;a<=10;a++){
+//     if(a==5){
+//         continue;
+//     }
+//     console.log(a);
+
+// }
+
+for(var i=1;i<9;i++){
+    console.log(i++)
+    // console.log(i)
+    // console.log(++i)
+
+}
