@@ -304,3 +304,19 @@ for(var i=1;i<9;i++){
     // console.log(++i)
 
 }
+// numeric string used with + gives string type
+let result;
+
+result = '3' + 2; 
+console.log(result) // "32"
+console.log(typeof(result))
+// Note: Here Number is automatically convert String
+result = '3' + true; 
+console.log(result); // "3true"
+// Note: Here boolean is automatically convert String because first word are 
+
+result = '3' + undefined; 
+console.log(result); // "3undefined"
+// Note: Here keywords is automatically convert String because first word are 
+result = '3' + null; 
+console.log(result); // "3null"
