@@ -150,6 +150,18 @@ console.log(person)
 var student = {}
 student.name="bappy"
 console.log(student)
+var person = {
+  firstname: 'Borhan',
+  age: 21,
+  isMale: true,
+  balance: 100.0,
+  dob: new Date(2000, 1, 28).toJSON(),
+  address: { vill: 'Banail',
+                city: 'tangail' 
+              }
+}
+console.log(person)
+console.log(person.age)
   ```
 #### Array
   ```javascript
@@ -354,12 +366,56 @@ console.log(result); // "3undefined"
 // Note: Here keywords is automatically convert String because first word are 
 result = '3' + null; 
 console.log(result); // "3null"
+
+// numeric string used with - , / , * results number type
+
+let result;
+
+result = '4' - '2'; 
+console.log(result); // 2
+// String automatically convert  integer
+result = '4' - 2;
+console.log(result); // 2
+
+result = '4' * 2;
+console.log(result); // 8
+
+result = '4' / 2;
+console.log(result); // 2
 ```
 #### Explicit conversion
 * You can also convert one data type to another as per your needs. The type conversion that you do manually is known as explicit type conversion.
 * In JavaScript, explicit type conversions are done using built-in methods.
 ```javascript
+var result;
 
+// string to number
+result = Number('324');
+console.log(result); // 324
+// In JavaScript, empty strings and null values return 0. For example,
+var result;
+result = Number(null);
+console.log(result);  // 0
+
+// If a string is an invalid number, the result will be NaN. For example,
+
+var result = Number('hello');
+console.log(result); // NaN
+// You can also generate numbers from strings using parseInt(),
+// parseFloat(), unary operator + and Math.floor(). For example,
+ result;
+result = parseInt('20.01');
+console.log(result); // 20
+
+result = parseFloat('20.01');
+console.log(result); // 20.01
+
+result = +'20.01';
+console.log(result); // 20.01
+
+result = Math.floor('20.01');
+console.log(result); // 20
+// https://www.programiz.com/javascript/type-conversion link
 ```
 ### Flow control
 ```javascript

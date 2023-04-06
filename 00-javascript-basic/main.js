@@ -59,12 +59,12 @@
 // // create a bigint number
 // let xy= 211111111111111111n
 // console.log(typeof(xy))
-// // BigInt operation 
+// // BigInt operation
 // let ab=10n
 // let bc=20n
 // console.log(ab+bc)
 // console.log(bc-ab)
-// // console.log(10+20n) not correct 
+// // console.log(10+20n) not correct
 
 // let x=10
 // let y=20
@@ -92,8 +92,8 @@
 //     else
 //     return false
 //   }
-  
-// var a=areEqualCaseInsensitive("Bappy","bappy") 
+
+// var a=areEqualCaseInsensitive("Bappy","bappy")
 // console.log(a)
 // var person={
 
@@ -118,7 +118,7 @@
 //     }
 // }
 // console.log(fassion.shirt.tshirt1)
-// // Booleans 
+// // Booleans
 // var isAdults =false
 // console.log(isAdults)
 // if(isAdults){
@@ -127,7 +127,7 @@
 // else{
 //     console.log("is not adults")
 // }
-//  Arrays dicleartion 
+//  Arrays dicleartion
 // var name=["Borhan",
 //                 "Shoab",
 //                 "Sharukh",
@@ -149,7 +149,7 @@
 // name.delete=("Bappy")
 // console.log(name)
 // console.log(name)
-// //  
+// //
 // var years=[5,5]
 // console.log(years[0] !== years[1]);
 // years[5] = "mango";
@@ -198,7 +198,7 @@
 // console.log(months);
 // // expected output: Array ["Jan", "Feb", "March", "April", "May"]
 
-//  Function 
+//  Function
 // function addumbers(number1,number2){
 // var addition =number1+number2;
 // console.log(addition);
@@ -225,7 +225,7 @@
 // //  Here b find index 4
 // console.log("shoab".indexOf("b"))
 // console.log("shoab".indexOf("a"))
-//  Loops 
+//  Loops
 // var names=[
 //     'Shoab',
 //     'Borhan',
@@ -240,7 +240,7 @@
 // console.log("")
 // console.log("for of")
 // // for (const iterator of object) {
-   
+
 // // }
 // for (const name of names) {
 //     console.log(name)
@@ -248,7 +248,7 @@
 // console.log("")
 // console.log("forEach")
 // // array.forEach(element => {
-  
+
 // // });
 
 // names.forEach(function(name) {
@@ -298,25 +298,163 @@
 
 // }
 
-for(var i=1;i<9;i++){
-    console.log(i++)
-    // console.log(i)
-    // console.log(++i)
+// for(var i=1;i<9;i++){
+//     console.log(i++)
+//     // console.log(i)
+//     // console.log(++i)
 
-}
+// }
 // numeric string used with + gives string type
-let result;
+// let result;
 
-result = '3' + 2; 
-console.log(result) // "32"
-console.log(typeof(result))
-// Note: Here Number is automatically convert String
-result = '3' + true; 
-console.log(result); // "3true"
-// Note: Here boolean is automatically convert String because first word are 
+// result = '3' + 2;
+// console.log(result) // "32"
+// console.log(typeof(result))
+// // Note: Here Number is automatically convert String
+// result = '3' + true;
+// console.log(result); // "3true"
+// // Note: Here boolean is automatically convert String because first word are
 
-result = '3' + undefined; 
-console.log(result); // "3undefined"
-// Note: Here keywords is automatically convert String because first word are 
-result = '3' + null; 
-console.log(result); // "3null"
+// result = '3' + undefined;
+// console.log(result); // "3undefined"
+// // Note: Here keywords is automatically convert String because first word are
+// result = '3' + null;
+// console.log(result); // "3null"
+
+// numeric string used with - , / , * results number type
+
+// let result;
+
+// result = '4' - '2';
+// console.log(result); // 2
+// // String automatically convert  integer
+// result = '4' - 2;
+// console.log(result); // 2
+
+// result = '4' * 2;
+// console.log(result); // 8
+
+// result = '4' / 2;
+// console.log(result); // 2
+
+// var result= "5"
+// var b=(Number(result))
+// console.log(typeof(b))
+// let greeter = "hey hi";
+// var times = 4;
+
+// if (times > 3) {
+//     greeter = "say Hello instead";
+// }
+
+// console.log(greeter) // "say Hello instead"
+// var g='say';
+// var g = "say hello"
+// console.log(g); // greeter is undefined
+var result;
+
+// string to number
+// result = Number('324');
+// console.log(result); // 324
+// In JavaScript, empty strings and null values return 0. For example,
+// var result;
+// result = Number(null);
+// console.log(result);  // 0
+
+// // If a string is an invalid number, the result will be NaN. For example,
+
+// var result = Number('hello');
+// console.log(result); // NaN
+// // You can also generate numbers from strings using parseInt(),
+// // parseFloat(), unary operator + and Math.floor(). For example,
+//  result;
+// result = parseInt('20.01');
+// console.log(result); // 20
+
+// result = parseFloat('20.01');
+// console.log(result); // 20.01
+
+// result = +'20.01';
+// console.log(result); // 20.01
+
+// result = Math.floor('20.01');
+// console.log(result); // 20
+// https://www.programiz.com/javascript/type-conversion link
+// The right way to create variables
+// var i
+// for( i=0;i<=10;i++){
+//     console.log(i)
+// }
+// console.log("value of outside "+i)
+// // let
+// for (let index = 0; index < 10; index++) {
+//     console.log(index)
+// }
+// console.log("value of outside block"+index)
+// find the error of the console because let not allow out of the block
+// for(var i=0;i<10;i++){
+//     console.log(i)
+//     if(i==5){
+//         break;
+//     }
+// }
+// i=0
+// while(i<5){
+//     console.log(i)
+//     if(i==5){
+// break;
+//     }
+//     i=i+1
+// }
+// console.log(10!==10)
+// var i=0
+// while(i<5){
+
+//     i++;
+//   if(i==2){
+//         continue;
+//     }
+//     console.log(i)
+// }
+
+// for(var i=0;i<5;i++){
+//     if(i==2){
+//         break;
+//     }
+//     console.log(i)
+// }
+// const name='Bappy'
+//   const language="Bangla"
+//   const channel=`code`
+//   console.log(name,language,channel)
+// var brand ="Amigoscode"
+// console.log(typeof brand)
+// console.log(brand.toUpperCase())
+// console.log(brand.substring(0, 6))
+// var a="Amigos"
+// var b="code"
+// console.log(a+" "+b)
+// console.log(`${a} ${b.toUpperCase(0,2)}`)
+// console.log(a.charAt(5))
+// console.log(a[5])
+// function areEqualCaseInsensitive(str1, str2) {
+//     if(str1.toUpperCase() === str2.toUpperCase())
+//     return str1
+//     else
+//     return false
+//   }
+
+// console.log(areEqualCaseInsensitive("Bappy","bappy")
+// )
+var person = {
+  firstname: 'Borhan',
+  age: 21,
+  isMale: true,
+  balance: 100.0,
+  dob: new Date(2000, 1, 28).toJSON(),
+  address: { vill: 'Banail',
+                city: 'tangail' 
+              }
+}
+console.log(person)
+console.log(person.age)
