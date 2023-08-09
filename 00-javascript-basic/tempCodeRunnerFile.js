@@ -1,6 +1,4 @@
-for(var i=0;i<5;i++){
-//     if(i==2){
-//         break;
-//     }
-//     console.log(i)
+export function displaying() {
+//   var container = document.getElementById("demo");
+//   container.innerHTML = Date();
 // }

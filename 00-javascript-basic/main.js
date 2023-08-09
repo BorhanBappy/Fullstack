@@ -1,3 +1,4 @@
+
 // console.log("Hello World Bappy")
 // let age =25
 // age=30
@@ -351,7 +352,7 @@
 // var g='say';
 // var g = "say hello"
 // console.log(g); // greeter is undefined
-var result;
+// var result;
 
 // string to number
 // result = Number('324');
@@ -446,15 +447,78 @@ var result;
 
 // console.log(areEqualCaseInsensitive("Bappy","bappy")
 // )
-var person = {
-  firstname: 'Borhan',
-  age: 21,
-  isMale: true,
-  balance: 100.0,
-  dob: new Date(2000, 1, 28).toJSON(),
-  address: { vill: 'Banail',
-                city: 'tangail' 
-              }
-}
-console.log(person)
-console.log(person.age)
+// const num1 = [[1]];
+// const num2 = [2, [3]];
+// const num1=[1,2,3,4,5,6]
+// const num2=[7,8,9]
+// const numbers = num1.concat(num2);
+
+// console.log(numbers);
+// // results in [[1], 2, [3]]
+
+// // modify the first element of num1
+// num1 [0].push(4);
+// console.log(num2[2]);
+// // push array
+// num2.push("9");
+// console.log(num2)
+// console.log(numbers);
+// var a='3';
+// var b='2';
+// console.log(Number(a )+Number (b));
+// var a=[1,2,3,4,5]
+
+// function isAnagram (s, t) {
+//   if (s.length !== t.length) {
+//     // if the two strings are not of equal length, they cannot be anagrams
+//     return false;
+//   }
+//   let sCounts = {}; // object to store the character counts of s
+//   let tCounts = {}; // object to store the character counts of t
+//   for (let i = 0; i < s.length; i++) {
+//     // count the characters in s and t
+//     sCounts[s[i]] = (sCounts[s[i]] || 0) + 1;
+//     tCounts[t[i]] = (tCounts[t[i]] || 0) + 1;
+//   console.log(tCounts[t[i]]);
+//   console.log(" ")
+//   console.log((tCounts[t[i]] || 0) + 1);
+//   }
+//   for (let char in sCounts) {
+//     // compare the character counts of s and t
+//     if (sCounts[char] !== tCounts[char]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+// console.log(isAnagram("anagram", "nagaram"));
+// function displaying() {
+//   const date = new Date();
+//   const demo = document.getElementById("demo");
+//   demo.innerHTML = date;
+// }
+// export function displaying() {
+//   var container = document.getElementById("demo");
+//   container.innerHTML = Date();
+// }
+
+// console.log("Hello Bappy")
+
+// function numbers(a,b){
+//   return a+b;
+// }
+// console.log(`Normal Function Return ${numbers(40,60)}`);
+// let number=(a,b)=> a+b
+// console.log(`Arrow function Return: ${number(40,50)}`)
+// console.log("Hello from Main.js")
+// let age=25;
+// console.log(25);
+// // const salary=0
+// // salary=80000
+// // console.log(salary)
+// let sum=0;
+// sum=56;
+// console.log(sum)
+const name="Bappy"
+const language='Javascript'
+const Chanel= "codevolution"

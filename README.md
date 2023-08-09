@@ -29,6 +29,10 @@
       - [Explicit conversion](#explicit-conversion)
     - [Flow control](#flow-control)
       - [If-Else Method](#if-else-method)
+- [ES6](#es6)
+  - [Arrow Function](#arrow-function)
+    - [Without Parameter](#without-parameter)
+    - [Function With Parameter](#function-with-parameter)
 
 
 ## Installation
@@ -162,6 +166,10 @@ var person = {
 }
 console.log(person)
 console.log(person.age)
+console.log(person.balance)
+console.log(Object.values(person))
+console.log(Object.keys(person));
+console.log(JSON.stringify(person))
   ```
 #### Array
   ```javascript
@@ -421,3 +429,22 @@ console.log(result); // 20
 ```javascript
 ```
 #### If-Else Method
+
+# ES6
+## Arrow Function
+### Without Parameter
+```javascript 
+// Normal Function 
+function numbers(){
+  return 10;
+}
+console.log(`Normal Function Return: ${numbers()}`);
+let number=()=> 30
+// Arrow Function
+let number=()=> 30
+console.log(`Arrow function return: ${number()}`)
+```
+ Output of  Arrow Function 
+
+![Alt text](00-javascript-basic/Image/Arrowfunction.png)
+### Function With Parameter
