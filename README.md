@@ -40,6 +40,10 @@
     - [Ternary Operator](#ternary-operator)
     - [](#)
 - [Prototype](#prototype)
+  - [Inheritance](#inheritance)
+    - [Inheritance  using Function](#inheritance--using-function)
+    - [Class inheritance](#class-inheritance)
+    - [Polymorphism](#polymorphism)
 
 
 ## Installation
@@ -48,6 +52,7 @@
 npm create vite@latest
 npm run dev
 00-javascript-basic
+# learn-markdown for code
 ```
 # Javascript
 ## Javascript Basic
@@ -672,4 +677,145 @@ class Person5{
   let tamim5 = new Person5("Tamim", 34,'01767416203');
   console.log(sakib5);
   sakib5.play()
+```
+
+## Inheritance  
+
+
+```javascript
+function Person(name, age) {
+        this.name = name;
+        this.age = age;
+
+    }
+
+Person.prototype={
+    eat:function(){
+        console.log(`${this.name} is eating`)
+    }
+}
+const sakib=new Person("Sakib",35);
+console.log(sakib)
+const tamim=new Person("Tamim",34);
+console.log(tamim)
+```
+// Here used prototype for memory efficiency
+
+### Inheritance  using Function
+
+
+```javascript
+function Person(name, age) {
+        this.name = name;
+        this.age = age;
+
+    }
+
+ function Cricketer(name,age,type,country){
+
+    Person.call(this);
+    this.name=name;
+    this.age=age
+    this.type=type;
+    this.country=country;
+ }
+Person.prototype={
+    eat:function(){
+        console.log(`${this.name} is eating`)
+    }
+}
+Cricketer.prototype=Object.create(Person.prototype);
+Cricketer.prototype.constructor=Cricketer;
+Cricketer.prototype.play=function(){
+    console.log(`${this.name} is Playing`)
+}
+let sakib=new Cricketer("Sakib",35);
+sakib.play()
+```
+
+### Class inheritance
+
+```javascript
+class Person {
+  //Parent Class
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  eat() {
+    console.log(`${this.name} is eating`);
+  }
+}
+class Cricketer extends Person {
+  //Sub Class
+  constructor(name, age, type, country) {
+    super(name, age);
+    this.name = name;
+    this.age = age;
+    this.type = type;
+    this.country = country;
+  }
+  play() {
+    console.log(`${this.name} is Playing`);
+  }
+}
+let sakib = new Cricketer("sakib", 36, "Allrounder", "Bangladesh");
+sakib.eat();
+
+
+Getter nad Setter
+
+class Person{
+    constructor(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    eat(){
+        console.log(`${this.name} is eating`)
+    }
+    get setName(){
+        return this.name;
+    }
+}
+let sakib = new Person("sakib", 36 );
+```
+
+### Polymorphism
+
+
+```javascript
+class Person {
+  //Parent Class
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  eat() {
+    console.log(`${this.name} is eating`);
+  };
+  play() {
+    console.log(`${this.name} is Playing`);
+  }
+
+}
+class Cricketer extends Person {
+  //Sub Class
+  constructor(name, age, type, country) {
+    super(name, age);
+    this.name = name;
+    this.age = age;
+    this.type = type;
+    this.country = country;
+  }
+//   play() {
+//     console.log(`${this.name} is Playing Cricket`);
+//   }
+play(){
+    super.play();
+        console.log(`${this.name} is Playing Cricket`);
+
+}
+}
+let sakib = new Cricketer("sakib", 36, "Allrounder", "Bangladesh");
+sakib.play();
 ```
