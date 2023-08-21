@@ -4,7 +4,9 @@
     - [Variable Declare](#variable-declare)
     - [Data types](#data-types)
     - [Primitive](#primitive)
-      - [String type](#string-type)
+    - [String](#string)
+        - [String type](#string-type)
+      - [String Method](#string-method)
       - [Number type](#number-type)
       - [Boolean type](#boolean-type)
       - [Undefined type](#undefined-type)
@@ -27,12 +29,17 @@
     - [Type Conversion](#type-conversion)
       - [Implicit](#implicit)
       - [Explicit conversion](#explicit-conversion)
+        - [Number to String Conversion](#number-to-string-conversion)
     - [Flow control](#flow-control)
       - [If-Else Method](#if-else-method)
 - [ES6](#es6)
   - [Arrow Function](#arrow-function)
     - [Without Parameter](#without-parameter)
     - [Function With Parameter](#function-with-parameter)
+  - [Truthy / Falsy values](#truthy--falsy-values)
+    - [Ternary Operator](#ternary-operator)
+    - [](#)
+- [Prototype](#prototype)
 
 
 ## Installation
@@ -60,9 +67,11 @@ console.log(salary)
 var PI=3.14
 console.log(PI)
 ```
+
 ### Data types
 ### Primitive
-  #### String type
+### String
+ ##### String type
   ```javascript 
   const name='Bappy'
   const language="Bangla"
@@ -88,6 +97,8 @@ function areEqualCaseInsensitive(str1, str2) {
 var a=areEqualCaseInsensitive("Bappy","bappy") 
 console.log(a)
   ```
+#### String Method
+
 #### Number type
   ```javascript 
   const total=0
@@ -241,7 +252,7 @@ console.log(months);
 ### Operators
 * Assignment operators
 * Arithmetic Operators
-* Comparison Operators
+* Comparison Operators![Alt text](<Photo/Screenshot 2023-08-09 124710.png>) (https://www.w3schools.com/js/js_comparisons.asp )
 * Logical Operators
 * String Operators
 * Other Operators
@@ -278,6 +289,7 @@ console.log("shoab".toUpperCase())
 console.log("shoab".indexOf("b"))
 console.log("shoab".indexOf("a"))
 ```
+
 ### Loops
 #### For loops
 ```javascript
@@ -400,6 +412,16 @@ var result;
 // string to number
 result = Number('324');
 console.log(result); // 324
+
+
+```
+##### Number to String Conversion 
+* String literal -> str = "" + num + "";
+* String constructor -> str = String(num);
+* toString -> str = num.toString();
+* String Literal simple -> str = "" + num
+
+```JavaScript
 // In JavaScript, empty strings and null values return 0. For example,
 var result;
 result = Number(null);
@@ -418,7 +440,7 @@ console.log(result); // 20
 result = parseFloat('20.01');
 console.log(result); // 20.01
 
-result = +'20.01';
+result = '20.01';
 console.log(result); // 20.01
 
 result = Math.floor('20.01');
@@ -433,7 +455,7 @@ console.log(result); // 20
 # ES6
 ## Arrow Function
 ### Without Parameter
-```javascript 
+```JavaScript 
 // Normal Function 
 function numbers(){
   return 10;
@@ -448,3 +470,206 @@ console.log(`Arrow function return: ${number()}`)
 
 ![Alt text](00-javascript-basic/Image/Arrowfunction.png)
 ### Function With Parameter
+## Truthy / Falsy values 
+
+
+```JavaScript 
+var maybar= 0;
+if(maybar){
+    console.log("I am truthy")
+} else{
+    console.log("I am Falsy")
+}
+// Expected Result is I am Falsy, 0,Null,"", Undefined always return else
+
+```
+### Ternary Operator
+```JavaScript 
+var age = 8;
+// var type=(age>=18) ? "adult" : "Child"
+var type = age >= 18 ? "adult" : age < 10 ? "child" : "Young";
+// var type=age>6
+console.log(type);
+```
+### 
+```JavaScript 
+
+```
+
+```JavaScript 
+
+```
+```JavaScript 
+
+```
+# Prototype
+```JavaScript 
+
+let person={
+
+}
+person.name='Sakib khan';
+person.age=18;
+person.eat=function(){
+    console.log('Person is eating')
+};
+person.sleep=function(){
+    console.log('Person is sleeping')
+}
+console.log(person)
+// In this code problem occur every time object create like person1,person2
+// Resolve this issue using function with parameter.
+
+function Person1(name,age){
+    let person1={}
+    person1.name=name
+    person1.age=age
+    person1.eat=function(){
+        console.log('Person is eating')
+    };
+    person1.sleep=function(){
+        console.log('Person is sleeping')
+    }
+   return person1;
+}
+let sakib1=Person1('Sakib', 36)
+let tamim1=Person1('Tamim',34)
+console.log(sakib1)
+sakib1.eat()
+
+// Here is problem general property  crate every time so, we solve this issue using crate a object outside the person function
+// and call Her
+
+const persomethod={
+
+    eat(){
+        console.log('Person is eating')
+    },
+   sleep(){
+        console.log('Person is sleeping')
+    },
+    play(){
+        console.log('Person is Playing')
+    }
+};  
+
+
+function Person2(name,age){
+    let person2={}
+    person2.name=name
+    person2.age=age
+    person2.eat=persomethod.eat;
+    person2.sleep=persomethod.sleep;
+    person2.play=persomethod.play;
+
+   return person2;
+}
+let sakib2=Person2('Sakib', 36)
+let tamim2=Person2('Tamim',34)
+console.log(sakib2)
+sakib2.play()
+
+// if you want to common function you add two time object.create method solve this issue
+const persomethods={
+
+    eat(){
+        console.log('Person is eating')
+    },
+   sleep(){
+        console.log('Person is sleeping')
+    },
+    play(){
+        console.log('Person is Playing')
+    }
+};  
+
+
+function Person3(name,age){
+    let person3=Object.create(persomethods)
+    person3.name=name
+    person3.age=age
+
+   return person3;
+}
+let sakib3=Person3('Sakib', 36)
+let tamim3=Person3('Tamim',34)
+console.log(sakib3)
+sakib3.play()
+
+ 
+// Prototype is function property which point out JavaScript object.
+
+function Person4(name,age){
+    this.name=name
+    this.age=age
+
+}
+Person4.prototype = {
+
+    eat(){
+        console.log('Person is eating')
+    },
+   sleep(){
+        console.log('Person is sleeping')
+    },
+    play(){
+        console.log('Person is Playing')
+    }
+};  
+// Using New we can remove object.crate and return that autometicly count prototype.
+
+let sakib4=new Person4('Sakib', 36)
+let tamim4=new Person4('Tamim',34)
+console.log(sakib4)
+sakib4.play()
+
+
+// function Person(name, age,phonenumber) {
+//   this.name = name;
+//   this.age = age;
+//   this.phonenumber=phonenumber;
+// };
+
+// Person.prototype = {
+//   eat() {
+//     console.log("Person is eating");
+//   },
+//   sleep() {
+//     console.log("Person is sleeping");
+//   },
+//   play() {
+//     console.log("Person is Playing");
+//   }
+// };
+// let sakib = new Person("Sakib", 36,'01778122843');
+// let tamim = new Person("Tamim", 34,'01767416203');
+// console.log(sakib);
+// sakib.play()
+
+// let sakib = new Personwithnew("Sakib", 36);
+// let tamim = new Personwithnew("Tamim", 34);
+// sakib.play();
+
+// Using Class in this point eat() is method here not object 
+class Person5{
+   constructor (name, age,phonenumber) {
+    this.name = name;
+    this.age = age;
+    this.phonenumber=phonenumber;
+  }
+  
+    eat() {
+      console.log("Person is eating");
+    }
+    sleep() {
+      console.log("Person is sleeping");
+    }
+    play() {
+      console.log("Person is Playing");
+    }
+  };
+  let sakib5 = new Person5("Sakib", 36,'01778122843');
+  let tamim5 = new Person5("Tamim", 34,'01767416203');
+  console.log(sakib5);
+  sakib5.play()
+```
