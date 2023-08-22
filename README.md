@@ -38,12 +38,18 @@
     - [Function With Parameter](#function-with-parameter)
   - [Truthy / Falsy values](#truthy--falsy-values)
     - [Ternary Operator](#ternary-operator)
-    - [](#)
+    - [Array Find](#array-find)
 - [Prototype](#prototype)
   - [Inheritance](#inheritance)
     - [Inheritance  using Function](#inheritance--using-function)
     - [Class inheritance](#class-inheritance)
     - [Polymorphism](#polymorphism)
+- [Asynchronous JavaScript](#asynchronous-javascript)
+  - [Callback](#callback)
+    - [Callback asynchronous](#callback-asynchronous)
+  - [Promise](#promise)
+    - [Promise All](#promise-all)
+  - [async-await](#async-await)
 
 
 ## Installation
@@ -496,17 +502,9 @@ var type = age >= 18 ? "adult" : age < 10 ? "child" : "Young";
 // var type=age>6
 console.log(type);
 ```
-### 
-```JavaScript 
+### Array Find
 
-```
 
-```JavaScript 
-
-```
-```JavaScript 
-
-```
 # Prototype
 ```JavaScript 
 
@@ -818,4 +816,141 @@ play(){
 }
 let sakib = new Cricketer("sakib", 36, "Allrounder", "Bangladesh");
 sakib.play();
+```
+# Asynchronous JavaScript
+## Callback
+
+```javascript
+const processOrder = (customer) => {
+  console.log(`Processing Order for Customer 1`);
+
+  // var currentTime = new Date().getTime();
+
+  // while (currentTime + 3000 >= new Date().getTime());
+  setTimeout(() => {
+    console.log("Cooking Completed");
+  }, 3000);
+  console.log(`Order processed for Customer 1`);
+};
+console.log(`Take Order for Customer 1`);
+processOrder();
+console.log(`Completed Order for Customer`);
+```
+
+### Callback asynchronous
+
+```javascript
+const takeOrder = (customer, callback) => {
+  console.log(`Take order for ${customer} `);
+  callback(customer);
+};
+
+const processOrder = (customer, callback) => {
+  console.log(`Processing order for ${customer}`);
+  setTimeout(() => {
+    console.log(`Cooking Completed`);
+    console.log(`Order Processed for ${customer}`);
+    callback(customer);
+  }, 3000);
+};
+const completeOrder = (customer) => {
+  console.log(`Complete order for ${customer}`);
+};
+
+takeOrder("customer 1", (customer) => {
+  processOrder(customer, (customer) => {
+    completeOrder(customer);
+  });
+});
+takeOrder("customer 2", (customer) => {
+  processOrder(customer, (customer) => {
+    completeOrder(customer);
+  });
+});
+takeOrder("customer 3", (customer) => {
+  processOrder(customer, (customer) => {
+    completeOrder(customer);
+  });
+});
+```
+## Promise
+
+```javascript
+const hasMeeting = false;
+const meeting = new Promise((resolve, reject) => {
+  if (!hasMeeting) {
+    const meetingDetails = {
+      name: "Technical Meeting",
+      location: "Google Meet",
+      time: "10.00 P.M",
+    };
+    resolve(meetingDetails);
+  } else {
+    reject(new Error("Meeting already scheduled"));
+  }
+});
+const addtocalndar = (meetingDetails) => {
+  const calendar = `${meetingDetails.name} has been scheduled on ${meetingDetails.location} at ${meetingDetails.time}`;
+  return Promise.resolve(calendar);
+};
+meeting
+  .then(addtocalndar)
+  .then((res) => {
+    console.log(JSON.stringify(res));
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
+console.log("hello");
+```
+### Promise All
+
+```javascript
+const promise1 = Promise.resolve(`Promise 1 resolved`);
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(`Promise 2 resolved`);
+  }, 3000);
+});
+// promise1.then((res) => console.log(res));
+// promise2.then((res) => console.log(res));
+Promise.race([promise1, promise2]).then((res) => console.log(res));
+```
+
+## async-await
+
+```javascript
+const hasMeeting = false;
+const meeting = new Promise((resolve, reject) => {
+  if (!hasMeeting) {
+    const meetingDetails = {
+      name: "Technical Meeting",
+      location: "Google Meet",
+      time: "10.00 P.M",
+    };
+    resolve(meetingDetails);
+  } else {
+    reject(new Error("Meeting already scheduled"));
+  }
+});
+const addtocalndar = (meetingDetails) => {
+  const calendar = `${meetingDetails.name} has been scheduled on ${meetingDetails.location} at ${meetingDetails.time}`;
+  return calendar;
+};
+// meeting
+//   .then(addtocalndar)
+//   .then((res) => {
+//     console.log(JSON.stringify(res));
+//   })
+//   .catch((err) => {
+//     console.log(err.message);
+//   });
+// console.log("hello");
+
+async function myMeeting() {
+  const meetingDetails = await meeting;
+  const calendar = await addtocalndar(meetingDetails);
+  console.log(calendar);
+}
+myMeeting();
 ```
