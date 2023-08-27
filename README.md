@@ -46,7 +46,8 @@
     - [Polymorphism](#polymorphism)
 - [Asynchronous JavaScript](#asynchronous-javascript)
   - [Callback](#callback)
-    - [Callback asynchronous](#callback-asynchronous)
+    - [Callback asynchronous example 1](#callback-asynchronous-example-1)
+    - [Callback asynchronous example Anisul Haque](#callback-asynchronous-example-anisul-haque)
   - [Promise](#promise)
     - [Promise All](#promise-all)
   - [async-await](#async-await)
@@ -837,7 +838,7 @@ processOrder();
 console.log(`Completed Order for Customer`);
 ```
 
-### Callback asynchronous
+### Callback asynchronous example 1
 
 ```javascript
 const takeOrder = (customer, callback) => {
@@ -873,6 +874,43 @@ takeOrder("customer 3", (customer) => {
   });
 });
 ```
+### Callback asynchronous example Anisul Haque
+
+```javascript
+const task1 = (callback) => {
+    console.log("task1");
+    callback();
+  };
+
+  const task2 = (callback) => {
+    setTimeout(() => {
+      console.log("task2 data Loading");
+      callback();
+    }, 3000);
+  };
+  const task3 = (callback) => {
+    console.log("task3");
+    callback();
+  };
+  const task4 = (callback) => {
+    setTimeout(() => {
+      console.log("task4");
+      callback();
+    }, 1000);
+  };
+  const task5 = () => {
+    console.log("task1");
+  };
+  task1(function f1() {
+    task3(function f2() {
+      task2(function f2() {
+        task4(function f4() {
+          task5();
+        });
+      });
+    });
+  });
+```
 ## Promise
 
 ```javascript
@@ -903,6 +941,8 @@ meeting
   });
 console.log("hello");
 ```
+
+
 ### Promise All
 
 ```javascript
